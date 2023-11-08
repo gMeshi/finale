@@ -4,9 +4,9 @@
 
 1) Hangman, but its not hangman and its a side scrolling shooter like those contra games where the enemies are letters and youre the hangman.
 
-2) some type of city building or management game, maybe with a weird twist or something
+2) some type of city building or management game, maybe with a weird twist or something. Maybe a tower defense.
 
-3) something to do with snakes, i'll figure it out.
+3) something to do with snakes, not pythons though, i'll figure it out.
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 
