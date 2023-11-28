@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://dmpeuyx8g8ls6"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_qav2p"]
+[ext_resource type="Texture2D" uid="uid://dvbg6p7gmw81f" path="res://assets/textures/bg.png" id="2_bp16v"]
+[ext_resource type="Texture2D" uid="uid://bivtfe2bml3oh" path="res://assets/textures/play.png" id="3_a8ac8"]
+[ext_resource type="Texture2D" uid="uid://cqm4y4pa043aw" path="res://assets/textures/setting.png" id="4_n3g3f"]
+[ext_resource type="Texture2D" uid="uid://bp125pux2rq6f" path="res://assets/textures/back.png" id="5_y3sv7"]
+[ext_resource type="Texture2D" uid="uid://bdmswx8mk10kq" path="res://assets/textures/title.png" id="6_vm4ry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yphy7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnmmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3n5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_payga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3vwq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qav2p")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(585, 324)
+scale = Vector2(0.749674, 0.316162)
+texture = ExtResource("2_bp16v")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_right = 0.014
+offset_left = 479.872
+offset_top = 154.0
+offset_right = 636.872
+offset_bottom = 594.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yphy7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rnmmd")
+icon = ExtResource("3_a8ac8")
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g3n5u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g3n5u")
+icon = ExtResource("4_n3g3f")
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_payga")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q3vwq")
+icon = ExtResource("5_y3sv7")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(606, 123)
+scale = Vector2(1.029, 1.24885)
+texture = ExtResource("6_vm4ry")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

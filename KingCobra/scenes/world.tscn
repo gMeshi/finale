@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0oo4vb7gkibp"]
+
+[ext_resource type="PackedScene" uid="uid://bigmd2uw5md80" path="res://scenes/player.tscn" id="1_awo8k"]
+[ext_resource type="PackedScene" uid="uid://dr53du7hf40gx" path="res://scenes/grunt.tscn" id="2_bjdux"]
+[ext_resource type="Texture2D" uid="uid://18qji70qji7i" path="res://assets/textures/Background.png" id="2_nopfl"]
+[ext_resource type="Texture2D" uid="uid://btbamb5y7f45m" path="res://assets/textures/grasslong.png" id="2_ofh3a"]
+[ext_resource type="Texture2D" uid="uid://dq2phmdsd1lvs" path="res://assets/textures/dirtgrass_short.png" id="4_6d3tp"]
+[ext_resource type="Texture2D" uid="uid://bw1eo1fscse5b" path="res://assets/textures/dirt only.png" id="4_6dmhq"]
+[ext_resource type="PackedScene" uid="uid://b30ckd37yl4d" path="res://scenes/inviswall.tscn" id="5_n5vmx"]
+[ext_resource type="PackedScene" uid="uid://bbp5udd4wu838" path="res://scenes/bumper.tscn" id="7_6qyny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsiw0"]
+size = Vector2(7534.25, 388.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46js4"]
+size = Vector2(495.75, 104.5)
+
+[node name="Level 1" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(-27, 45)
+
+[node name="Background" type="Sprite2D" parent="floor"]
+position = Vector2(716.5, 35)
+scale = Vector2(4.53958, 2.94118)
+texture = ExtResource("2_nopfl")
+
+[node name="Background2" type="Sprite2D" parent="floor"]
+position = Vector2(4483.78, 34.0083)
+scale = Vector2(11.1592, 2.93388)
+texture = ExtResource("2_nopfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(3391.88, 625.75)
+shape = SubResource("RectangleShape2D_jsiw0")
+
+[node name="Grasslong3" type="Sprite2D" parent="floor/CollisionShape2D"]
+position = Vector2(2169.38, -68.75)
+scale = Vector2(1.46317, 1)
+texture = ExtResource("2_ofh3a")
+
+[node name="DirtOnly" type="Sprite2D" parent="floor/CollisionShape2D"]
+position = Vector2(-1877.88, 139.25)
+scale = Vector2(2.45833, 2.11328)
+texture = ExtResource("4_6dmhq")
+
+[node name="DirtOnly2" type="Sprite2D" parent="floor/CollisionShape2D"]
+position = Vector2(1890.13, 139.25)
+scale = Vector2(2.45833, 2.11328)
+texture = ExtResource("4_6dmhq")
+
+[node name="Grasslong2" type="Sprite2D" parent="floor/CollisionShape2D"]
+position = Vector2(-506.875, -68.75)
+texture = ExtResource("2_ofh3a")
+
+[node name="Grasslong" type="Sprite2D" parent="floor/CollisionShape2D"]
+position = Vector2(-2671.88, -67.75)
+texture = ExtResource("2_ofh3a")
+
+[node name="islands" type="StaticBody2D" parent="."]
+position = Vector2(-27, 45)
+
+[node name="short 2" type="CollisionShape2D" parent="islands"]
+position = Vector2(2063.25, 394)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_46js4")
+
+[node name="DirtgrassShort2" type="Sprite2D" parent="islands/short 2"]
+position = Vector2(-3.25, -2)
+scale = Vector2(0.481229, 0.456522)
+texture = ExtResource("4_6d3tp")
+
+[node name="short 3" type="CollisionShape2D" parent="islands"]
+position = Vector2(2705, 289)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_46js4")
+
+[node name="DirtgrassShort3" type="Sprite2D" parent="islands/short 3"]
+position = Vector2(43.4373, -0.249969)
+scale = Vector2(0.543622, 0.456522)
+texture = ExtResource("4_6d3tp")
+
+[node name="short 4" type="CollisionShape2D" parent="islands"]
+position = Vector2(1121, 412)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_46js4")
+
+[node name="DirtgrassShort" type="Sprite2D" parent="islands/short 4"]
+position = Vector2(-2.00012, 1.99997)
+scale = Vector2(0.481229, 0.456522)
+texture = ExtResource("4_6d3tp")
+
+[node name="inviswall" parent="islands" instance=ExtResource("5_n5vmx")]
+position = Vector2(209, 252)
+collision_layer = 32
+collision_mask = 2
+
+[node name="Player" parent="." instance=ExtResource("1_awo8k")]
+position = Vector2(523, 254)
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="Grunt" parent="Node" instance=ExtResource("2_bjdux")]
+position = Vector2(1119, 351)
+
+[node name="Grunt2" parent="Node" instance=ExtResource("2_bjdux")]
+position = Vector2(2744, 194)
+
+[node name="bumpersumpers" type="Node2D" parent="."]
+position = Vector2(689.5, 80)
+scale = Vector2(4.53958, 2.94118)
+
+[node name="bumper" parent="bumpersumpers" instance=ExtResource("7_6qyny")]
+position = Vector2(239.559, 74.12)
+scale = Vector2(0.220285, 0.34)
+
+[node name="bumper3" parent="bumpersumpers" instance=ExtResource("7_6qyny")]
+position = Vector2(385.828, 7.82)
+scale = Vector2(0.220285, 0.34)
+
+[node name="bumper4" parent="bumpersumpers" instance=ExtResource("7_6qyny")]
+position = Vector2(510.95, 6.12001)
+scale = Vector2(0.220285, 0.34)
+
+[node name="bumper2" parent="bumpersumpers" instance=ExtResource("7_6qyny")]
+position = Vector2(33.8136, 46.92)
+scale = Vector2(0.220285, 0.34)

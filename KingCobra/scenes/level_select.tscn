@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://02o7hu742lv0"]
+
+[ext_resource type="Texture2D" uid="uid://dvbg6p7gmw81f" path="res://assets/textures/bg.png" id="1_p7sm1"]
+[ext_resource type="Texture2D" uid="uid://b51kphwu8xjk1" path="res://assets/textures/levelbg.png" id="2_c4n21"]
+[ext_resource type="Texture2D" uid="uid://vja03aa4cno4" path="res://assets/textures/leveltitle.png" id="3_jm8s1"]
+[ext_resource type="Texture2D" uid="uid://c2dqkcc8y8b15" path="res://assets/textures/close_level.png" id="4_0xg1p"]
+[ext_resource type="Texture2D" uid="uid://bic12si3kxlts" path="res://assets/menu/table2.png" id="5_c2816"]
+[ext_resource type="Texture2D" uid="uid://diqt4r42tfwsy" path="res://assets/menu/L1 snake.png" id="6_dpdtj"]
+[ext_resource type="Texture2D" uid="uid://bhu1ru2ae7hco" path="res://assets/menu/star_4.png" id="6_v8w0y"]
+[ext_resource type="Texture2D" uid="uid://bcfd0kjenhmu3" path="res://assets/menu/lock.png" id="7_50562"]
+
+[sub_resource type="GDScript" id="GDScript_3jn2w"]
+script/source = "extends Control
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file((\"res://scenes/options_menu.tscn\"))
+
+
+
+
+
+
+func _on_level_1_pressed():
+	get_tree().change_scene_to_file((\"res://scenes/world.tscn\"))
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qokns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6gvc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nms7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqc3q"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_3jn2w")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(585, 324)
+scale = Vector2(0.749674, 0.316162)
+texture = ExtResource("1_p7sm1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 319)
+scale = Vector2(0.634086, 0.423988)
+texture = ExtResource("2_c4n21")
+
+[node name="Options" type="Sprite2D" parent="."]
+position = Vector2(571, 105)
+scale = Vector2(0.5656, 0.408608)
+texture = ExtResource("3_jm8s1")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1027.0
+offset_top = 34.0
+offset_right = 1127.0
+offset_bottom = 131.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qokns")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q6gvc")
+icon = ExtResource("4_0xg1p")
+
+[node name="Level 1" type="Button" parent="."]
+layout_mode = 2
+offset_left = 254.0
+offset_top = 203.0
+offset_right = 407.0
+offset_bottom = 309.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nms7m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rqc3q")
+icon = ExtResource("5_c2816")
+
+[node name="L1Snake" type="Sprite2D" parent="Level 1"]
+position = Vector2(25, 52)
+scale = Vector2(0.110596, 0.0673828)
+texture = ExtResource("6_dpdtj")
+
+[node name="Star4" type="Sprite2D" parent="Level 1"]
+position = Vector2(78, 80)
+scale = Vector2(0.766667, 0.508696)
+texture = ExtResource("6_v8w0y")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 203.0
+offset_right = 649.0
+offset_bottom = 309.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nms7m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rqc3q")
+icon = ExtResource("5_c2816")
+
+[node name="Lock" type="Sprite2D" parent="Button2"]
+position = Vector2(75.0001, 51)
+scale = Vector2(0.811857, 0.72541)
+texture = ExtResource("7_50562")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 203.0
+offset_right = 884.0
+offset_bottom = 309.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nms7m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rqc3q")
+icon = ExtResource("5_c2816")
+
+[node name="Lock2" type="Sprite2D" parent="Button3"]
+position = Vector2(73.9999, 52)
+scale = Vector2(0.811857, 0.72541)
+texture = ExtResource("7_50562")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
