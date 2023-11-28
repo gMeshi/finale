@@ -27,4 +27,5 @@ health system, story slideshow, enemy types, reward system
 #### What problems, if any, have you encountered?
 
 Fix attack animation
-attacks always from the right 
+attacks always 
+from the right 
