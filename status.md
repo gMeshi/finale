@@ -18,7 +18,7 @@ Short answers for the below questions suffice. If you want to alter your plan fo
 
 #### What have you done for your project so far?
 
-Basic menu design, level selector, player and enemies + tilemaps, collision detection.
+Basic menu design, level selector, player and enemies, tilemapping, basic asset design, collision detection.
 
 #### What have you not done for your project yet?
 
@@ -27,3 +27,4 @@ health system, story slideshow, enemy types, reward system
 #### What problems, if any, have you encountered?
 
 Fix attack animation
+attacks always from the right 
