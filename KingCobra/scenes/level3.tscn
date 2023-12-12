@@ -1,15 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0oo4vb7gkibp"]
+[gd_scene load_steps=14 format=3 uid="uid://c5l7v54c0dwih"]
 
-[ext_resource type="PackedScene" uid="uid://bigmd2uw5md80" path="res://scenes/player.tscn" id="1_awo8k"]
-[ext_resource type="PackedScene" uid="uid://dr53du7hf40gx" path="res://scenes/grunt.tscn" id="2_bjdux"]
-[ext_resource type="Texture2D" uid="uid://18qji70qji7i" path="res://assets/textures/Background.png" id="2_nopfl"]
-[ext_resource type="Texture2D" uid="uid://btbamb5y7f45m" path="res://assets/textures/grasslong.png" id="2_ofh3a"]
-[ext_resource type="Texture2D" uid="uid://dq2phmdsd1lvs" path="res://assets/textures/dirtgrass_short.png" id="4_6d3tp"]
-[ext_resource type="Texture2D" uid="uid://bw1eo1fscse5b" path="res://assets/textures/dirt only.png" id="4_6dmhq"]
-[ext_resource type="PackedScene" uid="uid://b30ckd37yl4d" path="res://scenes/inviswall.tscn" id="5_n5vmx"]
-[ext_resource type="PackedScene" uid="uid://bbp5udd4wu838" path="res://scenes/bumper.tscn" id="7_6qyny"]
-[ext_resource type="Texture2D" uid="uid://spn84t0nr13s" path="res://assets/textures/dirtgrass_mid.png" id="7_vxa83"]
-[ext_resource type="PackedScene" uid="uid://duu52g6ufa5c8" path="res://scenes/smallgrunt.tscn" id="10_tfogk"]
+[ext_resource type="Texture2D" uid="uid://18qji70qji7i" path="res://assets/textures/Background.png" id="1_0xmpj"]
+[ext_resource type="Texture2D" uid="uid://btbamb5y7f45m" path="res://assets/textures/grasslong.png" id="2_b1nr4"]
+[ext_resource type="Texture2D" uid="uid://bw1eo1fscse5b" path="res://assets/textures/dirt only.png" id="3_wsa5h"]
+[ext_resource type="PackedScene" uid="uid://b30ckd37yl4d" path="res://scenes/inviswall.tscn" id="4_yuej1"]
+[ext_resource type="Texture2D" uid="uid://dq2phmdsd1lvs" path="res://assets/textures/dirtgrass_short.png" id="5_7edhc"]
+[ext_resource type="PackedScene" uid="uid://bbp5udd4wu838" path="res://scenes/bumper.tscn" id="6_ig4xl"]
+[ext_resource type="Texture2D" uid="uid://spn84t0nr13s" path="res://assets/textures/dirtgrass_mid.png" id="7_iyadi"]
+[ext_resource type="PackedScene" uid="uid://bigmd2uw5md80" path="res://scenes/player.tscn" id="8_ukxoj"]
+[ext_resource type="PackedScene" uid="uid://dr53du7hf40gx" path="res://scenes/grunt.tscn" id="9_vmohh"]
+[ext_resource type="PackedScene" uid="uid://duu52g6ufa5c8" path="res://scenes/smallgrunt.tscn" id="10_fq371"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsiw0"]
 size = Vector2(7534.25, 388.5)
@@ -28,12 +28,12 @@ position = Vector2(-27, 45)
 [node name="Background" type="Sprite2D" parent="floor"]
 position = Vector2(716.5, 35)
 scale = Vector2(4.53958, 2.94118)
-texture = ExtResource("2_nopfl")
+texture = ExtResource("1_0xmpj")
 
 [node name="Background2" type="Sprite2D" parent="floor"]
 position = Vector2(4483.78, 34.0083)
 scale = Vector2(11.1592, 2.93388)
-texture = ExtResource("2_nopfl")
+texture = ExtResource("1_0xmpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2(3391.88, 625.75)
@@ -42,30 +42,30 @@ shape = SubResource("RectangleShape2D_jsiw0")
 [node name="Grasslong3" type="Sprite2D" parent="floor/CollisionShape2D"]
 position = Vector2(2169.38, -68.75)
 scale = Vector2(1.46317, 1)
-texture = ExtResource("2_ofh3a")
+texture = ExtResource("2_b1nr4")
 
 [node name="DirtOnly" type="Sprite2D" parent="floor/CollisionShape2D"]
 position = Vector2(-1877.88, 139.25)
 scale = Vector2(2.45833, 2.11328)
-texture = ExtResource("4_6dmhq")
+texture = ExtResource("3_wsa5h")
 
 [node name="DirtOnly2" type="Sprite2D" parent="floor/CollisionShape2D"]
 position = Vector2(1890.13, 139.25)
 scale = Vector2(2.45833, 2.11328)
-texture = ExtResource("4_6dmhq")
+texture = ExtResource("3_wsa5h")
 
 [node name="Grasslong2" type="Sprite2D" parent="floor/CollisionShape2D"]
 position = Vector2(-506.875, -68.75)
-texture = ExtResource("2_ofh3a")
+texture = ExtResource("2_b1nr4")
 
 [node name="Grasslong" type="Sprite2D" parent="floor/CollisionShape2D"]
 position = Vector2(-2671.88, -67.75)
-texture = ExtResource("2_ofh3a")
+texture = ExtResource("2_b1nr4")
 
 [node name="islands" type="StaticBody2D" parent="."]
 position = Vector2(-27, 45)
 
-[node name="inviswall" parent="islands" instance=ExtResource("5_n5vmx")]
+[node name="inviswall" parent="islands" instance=ExtResource("4_yuej1")]
 position = Vector2(209, 252)
 
 [node name="short 1" type="CollisionShape2D" parent="islands"]
@@ -75,37 +75,37 @@ shape = SubResource("RectangleShape2D_46js4")
 [node name="DirtgrassShort" type="Sprite2D" parent="islands/short 1"]
 position = Vector2(-2.00012, 1.99997)
 scale = Vector2(0.481229, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
-[node name="bumper2" parent="islands/short 1" instance=ExtResource("7_6qyny")]
+[node name="bumper2" parent="islands/short 1" instance=ExtResource("6_ig4xl")]
 position = Vector2(-251, -239)
 
 [node name="short 2" type="CollisionShape2D" parent="islands"]
 position = Vector2(2063.25, 394)
 shape = SubResource("RectangleShape2D_46js4")
 
-[node name="bumper" parent="islands/short 2" instance=ExtResource("7_6qyny")]
+[node name="bumper" parent="islands/short 2" instance=ExtResource("6_ig4xl")]
 position = Vector2(-259.253, -141)
 
 [node name="DirtgrassShort2" type="Sprite2D" parent="islands/short 2"]
 position = Vector2(-3.25, -2)
 scale = Vector2(0.481229, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
 [node name="short 3" type="CollisionShape2D" parent="islands"]
 position = Vector2(2705, 289)
 shape = SubResource("RectangleShape2D_46js4")
 
-[node name="bumper3" parent="islands/short 3" instance=ExtResource("7_6qyny")]
+[node name="bumper3" parent="islands/short 3" instance=ExtResource("6_ig4xl")]
 position = Vector2(-237.003, -231)
 
-[node name="bumper4" parent="islands/short 3" instance=ExtResource("7_6qyny")]
+[node name="bumper4" parent="islands/short 3" instance=ExtResource("6_ig4xl")]
 position = Vector2(237, -238)
 
 [node name="DirtgrassShort3" type="Sprite2D" parent="islands/short 3"]
 position = Vector2(-6.56252, -0.249969)
 scale = Vector2(0.458298, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
 [node name="short 4" type="CollisionShape2D" parent="islands"]
 position = Vector2(2705, 289)
@@ -114,7 +114,7 @@ shape = SubResource("RectangleShape2D_46js4")
 [node name="DirtgrassShort4" type="Sprite2D" parent="islands/short 4"]
 position = Vector2(-4.06256, -0.249969)
 scale = Vector2(0.462564, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
 [node name="short 5" type="CollisionShape2D" parent="islands"]
 position = Vector2(3287, 289)
@@ -123,12 +123,12 @@ shape = SubResource("RectangleShape2D_46js4")
 [node name="DirtgrassShort4" type="Sprite2D" parent="islands/short 5"]
 position = Vector2(-4.0625, -0.249969)
 scale = Vector2(0.462564, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
-[node name="bumper5" parent="islands/short 5" instance=ExtResource("7_6qyny")]
+[node name="bumper5" parent="islands/short 5" instance=ExtResource("6_ig4xl")]
 position = Vector2(-234, -247)
 
-[node name="bumper6" parent="islands/short 5" instance=ExtResource("7_6qyny")]
+[node name="bumper6" parent="islands/short 5" instance=ExtResource("6_ig4xl")]
 position = Vector2(235, -244)
 
 [node name="short 6" type="CollisionShape2D" parent="islands"]
@@ -138,54 +138,54 @@ shape = SubResource("RectangleShape2D_46js4")
 [node name="DirtgrassShort4" type="Sprite2D" parent="islands/short 6"]
 position = Vector2(-4.0625, -0.249969)
 scale = Vector2(0.462564, 0.456522)
-texture = ExtResource("4_6d3tp")
+texture = ExtResource("5_7edhc")
 
-[node name="bumper5" parent="islands/short 6" instance=ExtResource("7_6qyny")]
+[node name="bumper5" parent="islands/short 6" instance=ExtResource("6_ig4xl")]
 position = Vector2(-234, -247)
 
-[node name="bumper6" parent="islands/short 6" instance=ExtResource("7_6qyny")]
+[node name="bumper6" parent="islands/short 6" instance=ExtResource("6_ig4xl")]
 position = Vector2(235, -244)
 
 [node name="short 7" type="CollisionShape2D" parent="islands"]
 position = Vector2(4818, 265)
 shape = SubResource("RectangleShape2D_b676i")
 
-[node name="bumper7" parent="islands/short 7" instance=ExtResource("7_6qyny")]
+[node name="bumper7" parent="islands/short 7" instance=ExtResource("6_ig4xl")]
 position = Vector2(-485.75, -224)
 
-[node name="bumper8" parent="islands/short 7" instance=ExtResource("7_6qyny")]
+[node name="bumper8" parent="islands/short 7" instance=ExtResource("6_ig4xl")]
 position = Vector2(484.25, -226)
 
 [node name="Sprite2D" type="Sprite2D" parent="islands/short 7"]
 position = Vector2(1.43756, 19.5938)
 scale = Vector2(0.457707, 0.424122)
-texture = ExtResource("7_vxa83")
+texture = ExtResource("7_iyadi")
 
-[node name="Player" parent="." instance=ExtResource("1_awo8k")]
+[node name="Player" parent="." instance=ExtResource("8_ukxoj")]
 position = Vector2(523, 254)
 
 [node name="Node" type="Node2D" parent="."]
 
-[node name="Grunt" parent="Node" instance=ExtResource("2_bjdux")]
+[node name="Grunt" parent="Node" instance=ExtResource("9_vmohh")]
 position = Vector2(1119, 351)
 
-[node name="Grunt2" parent="Node" instance=ExtResource("2_bjdux")]
+[node name="Grunt2" parent="Node" instance=ExtResource("9_vmohh")]
 position = Vector2(2744, 194)
 
-[node name="Grunt4" parent="Node" instance=ExtResource("2_bjdux")]
+[node name="Grunt4" parent="Node" instance=ExtResource("9_vmohh")]
 position = Vector2(3307, 202)
 
-[node name="Grunt3" parent="Node" instance=ExtResource("2_bjdux")]
+[node name="Grunt3" parent="Node" instance=ExtResource("9_vmohh")]
 position = Vector2(4803, 194)
 
-[node name="smallgrunt" parent="Node" instance=ExtResource("10_tfogk")]
+[node name="smallgrunt" parent="Node" instance=ExtResource("10_fq371")]
 position = Vector2(2922, 442)
 
-[node name="bumper5" parent="Node/smallgrunt" instance=ExtResource("7_6qyny")]
+[node name="bumper5" parent="Node/smallgrunt" instance=ExtResource("6_ig4xl")]
 position = Vector2(-635, -57)
 
-[node name="bumper6" parent="Node/smallgrunt" instance=ExtResource("7_6qyny")]
+[node name="bumper6" parent="Node/smallgrunt" instance=ExtResource("6_ig4xl")]
 position = Vector2(786, -59)
 
-[node name="smallgrunt2" parent="Node" instance=ExtResource("10_tfogk")]
+[node name="smallgrunt2" parent="Node" instance=ExtResource("10_fq371")]
 position = Vector2(3963, 328)

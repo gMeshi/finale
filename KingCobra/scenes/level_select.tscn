@@ -23,6 +23,11 @@ func _on_back_pressed():
 
 func _on_level_1_pressed():
 	get_tree().change_scene_to_file((\"res://scenes/world.tscn\"))
+
+
+
+func _on_button_2_pressed():
+	get_tree().change_scene_to_file((\"res://scenes/level2.tscn\"))
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qokns"]
@@ -99,11 +104,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nms7m")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rqc3q")
 icon = ExtResource("5_c2816")
 
-[node name="Lock" type="Sprite2D" parent="Button2"]
-position = Vector2(75.0001, 51)
-scale = Vector2(0.811857, 0.72541)
-texture = ExtResource("7_50562")
-
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
 offset_left = 731.0
@@ -121,3 +121,4 @@ texture = ExtResource("7_50562")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
