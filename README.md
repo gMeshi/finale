@@ -4,3 +4,9 @@ The hardest part was getting all of the code to work together because of how man
 
 video link
 https://www.youtube.com/watch?v=XKBv0aETOHM
+
+Controls:
+arrow keys to move
+k to attack
+
+No options menu, only 2 levels, 2 enemy types, no hit detection, basic animation, basic collision & physics
